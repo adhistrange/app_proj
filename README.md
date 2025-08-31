@@ -39,7 +39,7 @@ java-micro-fuzzer/
 
 ```bash
 # Clone the repository
-git clone https://github.com/adhistrange/app_proj
+git clone https://github.com/adhistrange/java-micro-fuzzer
 cd java-micro-fuzzer
 
 # Build all modules
