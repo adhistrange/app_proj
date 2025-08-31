@@ -1,0 +1,6 @@
+com/securityresearch/fuzzer/analysis/model/VulnerabilityReport.class
+com/securityresearch/fuzzer/analysis/model/VulnerabilityReport$Builder.class
+com/securityresearch/fuzzer/analysis/VulnerabilityDetector$StatisticalAnalysisResult.class
+com/securityresearch/fuzzer/analysis/model/VulnerabilityType.class
+com/securityresearch/fuzzer/analysis/model/VulnerabilityReport$Severity.class
+com/securityresearch/fuzzer/analysis/VulnerabilityDetector.class

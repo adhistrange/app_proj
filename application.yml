@@ -1,0 +1,76 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: java-micro-fuzzer
+  
+  profiles:
+    active: dev
+  
+  security:
+    user:
+      name: admin
+      password: admin123
+
+# Fuzzer Configuration
+fuzzer:
+  genetic-algorithm:
+    population-size: 100
+    max-generations: 1000
+    crossover-rate: 0.8
+    mutation-rate: 0.1
+    elitism-rate: 0.1
+    tournament-size: 3
+    diversity-threshold: 0.3
+    stagnation-limit: 50
+    adaptive-mutation: true
+  
+  execution:
+    timeout: 30s
+    max-memory-bytes: 536870912  # 512MB
+    max-stack-depth: 1000
+    enable-sandbox: true
+    max-concurrent-executions: 4
+  
+  performance:
+    enable-detailed-profiling: true
+    enable-memory-tracking: true
+    enable-cpu-tracking: true
+    sampling-interval-ms: 10
+    outlier-threshold: 2.0
+    baseline-sample-size: 100
+    confidence-level: 0.95
+  
+  security:
+    enable-security-manager: true
+    restrict-file-access: true
+    restrict-network-access: true
+    restrict-system-access: true
+
+# Vaadin Configuration
+vaadin:
+  production-mode: false
+  frontend:
+    hot-deploy: true
+
+# Logging Configuration
+logging:
+  level:
+    com.securityresearch.fuzzer: DEBUG
+    org.springframework.web: INFO
+    com.vaadin: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always 
